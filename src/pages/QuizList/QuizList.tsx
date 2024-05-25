@@ -17,17 +17,19 @@ export const QuizList: React.FC = () => {
   }, []);
 
   return (
-    <div>
-      <div>
+    <div className=" p-5">
+      <h1 className="text-xl text-center mb-3">All quizes</h1>
+      <div className="grid grid-cols-3 gap-5 justify-around	">
         {quizList ? (
           quizList.map((quiz, index) => {
             return (
-              <div>
-                <Link style={{ margin: "10px" }} to={`quiz/${quiz.id}`}>
+              <div className=" bg-bgColor rounded-md flex justify-between gap-5 items-center p-5">
+                <Link className="w-full hover:text-onHoverLink" to={`quiz/${quiz.id}`}>
                   {quiz.title}
                 </Link>
-                <Link to={`/edit-quiz/${quiz.id}`}>
-                  <img style={{ width: "30px" }} src="/edit-icon.svg" alt="" />
+                <Link className="flex items-center gap-1 hover:text-onHoverLink" to={`/edit-quiz/${quiz.id}`}>
+                  <span >Edit</span>
+                  <img className="h-4" src="/edit-icon.svg" alt="" />
                 </Link>
               </div>
             );

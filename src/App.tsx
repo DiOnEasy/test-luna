@@ -3,7 +3,7 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Quiz } from "./pages/Quiz/Quiz";
 import { QuizList } from "./pages/QuizList/QuizList";
-import { ManageQuiz } from "./pages/AddQuiz/ManageQuiz";
+import { ManageQuiz } from "./pages/ManageQuiz/ManageQuiz";
 import { Header } from "./components/Header/Header";
 
 function App() {

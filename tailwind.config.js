@@ -7,6 +7,8 @@ module.exports = {
       transparent: "transparent",
       bgColor: "#d1d5db",
       onHoverLink: "#be123c",
+      black: "black",
+      green: "#45f542",
     },
   },
   plugins: [],
