@@ -5,40 +5,6 @@ import { getQuizList } from "../../utils/getQuizList";
 
 export const QuizList: React.FC = () => {
   const [quizList, setQuizList] = useState<IQuiz[] | null>(null);
-  // const quizList: IQuiz[] = [
-  //   {
-  //     title: "fsdlkjfsldfj",
-  //     questions: [
-  //       {
-  //         question: "What is the capital of France?",
-  //         options: ["Paris", "London", "Rome", "Berlin"],
-  //         answer: "Paris",
-  //       },
-  //       {
-  //         question: "What is 2 + 2?",
-  //         options: ["3", "4", "5", "6"],
-  //         answer: "4",
-  //       },
-  //     ],
-  //     id: "123",
-  //   },
-  //   {
-  //     title: "fsdlkjfsldfj",
-  //     questions: [
-  //       {
-  //         question: "What is the capital of France?",
-  //         options: ["Parasdis", "Londasdon", "Rodasme", "Berdsalin"],
-  //         answer: "Rodasme",
-  //       },
-  //       {
-  //         question: "What is 2 + 2?",
-  //         options: ["3", "4", "5", "6"],
-  //         answer: "4",
-  //       },
-  //     ],
-  //     id: "123312",
-  //   },
-  // ];
 
   useEffect(() => {
     getQuizList("quizList")
@@ -55,7 +21,16 @@ export const QuizList: React.FC = () => {
       <div>
         {quizList ? (
           quizList.map((quiz, index) => {
-            return <Link style={{margin: '10px'}} to={`quiz/${quiz.id}`}>{quiz.title}</Link>;
+            return (
+              <div>
+                <Link style={{ margin: "10px" }} to={`quiz/${quiz.id}`}>
+                  {quiz.title}
+                </Link>
+                <Link to={`/edit-quiz/${quiz.id}`}>
+                  <img style={{ width: "30px" }} src="/edit-icon.svg" alt="" />
+                </Link>
+              </div>
+            );
           })
         ) : (
           <div>Loading...</div>
