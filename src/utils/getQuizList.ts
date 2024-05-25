@@ -9,6 +9,6 @@ export const getQuizList = (key: string): Promise<IQuiz[] | null> => {
         } else {
           reject(new Error(`No data found for key: ${key}`));
         }
-      }, 1000); // Задержка в 1000 миллисекунд (1 секунда)
+      }, 500);
     });
   };

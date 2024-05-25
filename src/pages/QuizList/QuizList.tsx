@@ -55,7 +55,7 @@ export const QuizList: React.FC = () => {
       <div>
         {quizList ? (
           quizList.map((quiz, index) => {
-            return <Link to={`quiz/${quiz.id}`}>{quiz.title}</Link>;
+            return <Link style={{margin: '10px'}} to={`quiz/${quiz.id}`}>{quiz.title}</Link>;
           })
         ) : (
           <div>Loading...</div>
